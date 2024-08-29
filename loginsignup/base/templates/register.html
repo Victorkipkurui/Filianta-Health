@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,21 +51,26 @@
         }
         .messages {
             margin-top: 15px;
-            color: rgb(0, 230, 31);
+            color: red;
         }
+        
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Login</h2>
+        <h2>Register</h2>
         <form method="post">
             {% csrf_token %}
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
+            <label for="password">Confirm Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Register</button>
         </form>
+        <p>or</p>
+        <a href="{% url 'logout' %}">Login</a>
         <div class="messages">
             {% for message in messages %}
                 <p>{{ message }}</p>
