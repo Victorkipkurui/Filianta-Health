@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Styles/login.css">
+  <title>FigTree</title>
+</head>
+<body>
+  {%csrf_token%}
+  <form method="post" id="loginForm" class="form">
+    <label for="Email">Email: </label><br>
+    <input placeholder="Enter email address" type="email" id="email" name="email" required><br>
+
+    <label for="password"> Password</label><br>
+    <input placeholder="Password" type="text" id="password" name="password"><br>
+    <button  type="login">Login</button><br>
+    <button type="button">Create Account</button> 
+</form>
+  <script src="Scripts/login.js"></script>
+</body>
+</html>
