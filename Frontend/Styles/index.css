@@ -118,10 +118,26 @@ body{
 .book-now{
   margin-right: 20px;
 }
+.solutions {
+  display: flex;          
+  justify-content: center; 
+  align-items: center;          
+}
+.steps {
+  text-align: center;  
+  width: 30%;
+}
+.steps img {
+  width: 100px;       
+  height: 100px;                
+}
 
 #about, #services,.easy-steps,.h-doctors{
   text-align: center;
   margin-top: 20px;
+}
+#doctors{
+  margin-bottom: 200px;
 }
 .buttons{
   background-color: #000000;
@@ -136,12 +152,18 @@ body{
   padding: 20px;
   margin-bottom: 30px;
 }
+.book-doctor{
+  margin-top: 100px;
+}
 .sign{
   display: flex;
 }
 .home-image {
   height:500px;
   width: 400px;
+}
+.bg-color4{
+  text-align: center;
 }
 .text-content{
   text-align: left;
@@ -165,12 +187,15 @@ body{
   color: white;
   cursor: pointer;
 }
-.aboutUs,.specialists,.special-services,.solutions,.best-doctors,.bg{
+.aboutUs,.special-services,.best-doctors,.bg{
   padding: 20px;
   display: flex; 
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
+}
+.special-services{
+  margin-top: 50px;
 }
 .footer{
   padding: 20px;
@@ -188,6 +213,10 @@ body{
   height: 100px;
   width: 110px;
   border-radius: 50%;
+}
+.image-aboutUs2{
+  height: 100px;
+  width: 110px;
 }
 .image-aboutUs2{
   height: 100px;
@@ -211,6 +240,7 @@ body{
   justify-content: space-between;
   margin-bottom:80px;
   margin-top: 20px;
+  gap: 10px;
 }
 .submit{
   background-color:rgb(202, 192, 192);
@@ -219,6 +249,23 @@ body{
 }
 #sub-here{
   margin-right: 50px;
+}
+.specialists {
+  display: flex;          
+  justify-content: center; 
+  align-items: center;          
+}
+.bg-color3{
+  text-align: center;  
+  width: 100%;
+}
+.bg-color3 img {
+  width: 100px;       
+  height: 100px;                
+}
+.bg-color1{
+  height: 100px;
+  width: 250px;
 }
 /*.bg-color{
   background-color:rgb(202, 192, 192);
@@ -233,19 +280,26 @@ body{
 #socials{
   cursor: pointer;
   filter: grayscale(100%);
+  align-items: center;
+  flex-wrap: wrap;
+  display:flex;
+}
+.logo-footer{
+  flex-wrap: wrap;
+  display:flex;
 }
 .stats-container {
   display: flex;
   justify-content: space-around;
   background-color: #1a1a1a;
-  padding: 20px;
+  padding: 10px;
   color: white;
   margin: 100px 200px;
 }
 
 .stat-item {
   text-align: center;
-  padding: 20px;
+  padding: 0px;
   border-right: 1px solid #333;
   flex: 1;
 }

@@ -1,0 +1,319 @@
+.home-image{
+  height: 500px;
+  width:  400px
+}
+#home{
+  display: flex;
+}
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.image-text-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: rgb(0, 0, 0); 
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  background-color: white;
+}
+.home-buttons{
+  display: flex;
+  max-height: 40px;
+}
+.image-text-button .button-icon {
+  width: 40px; /* Adjust to the desired size */
+  height: 40px; /* Adjust to the desired size */
+  margin-right: 10px; /* Space between image and text */
+}
+
+.image-text-button .button-text {
+  font-size: 16px; /* Adjust text size */
+}
+.logo {
+    flex: 1;
+    font-size: 24px;
+}
+.logo-image{
+  height: 20px;
+  width: 35px;
+}
+#analysis{
+  background-color: #000000;
+  color: white;
+  padding: 50px;
+  margin: 50px;
+  margin-bottom: 100px;
+}
+.navbar {
+    flex: 2; 
+    display: flex;
+    align-items: center;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+.header-2{
+  font-size: larger;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+.button{
+    flex: 1;
+    text-align: right; 
+    font-size: 16px;
+    border: none;
+    background-color: white;
+}
+.button:focus,.navbar:focus{
+  background-color: black;
+  color: white;
+  padding:5px 10px;
+}
+body{
+  padding-left: 50px;
+  padding-right: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+.navbar-links a {
+  color: #000000;
+  text-decoration: none;
+}
+.navbar-links a:hover,
+.navbar-links a:focus {
+  color: #000000;
+  font-weight: bold;
+}
+
+.login hover{
+  background-color: #000000;
+  color: white;
+  border: none;
+}
+.copyright{
+  text-align: center;
+  background-color:gainsboro;
+  width: 100%
+}
+.book-now{
+  margin-right: 20px;
+}
+.solutions {
+  display: flex;          
+  justify-content: center; 
+  align-items: center;          
+}
+.steps {
+  text-align: center;  
+  width: 30%;
+}
+.steps img {
+  width: 100px;       
+  height: 100px;                
+}
+
+#about, #services,.easy-steps,.h-doctors{
+  text-align: center;
+  margin-top: 20px;
+}
+#doctors{
+  margin-bottom: 200px;
+}
+.buttons{
+  background-color: #000000;
+  color:white;
+  padding:10px 30px;
+  border: none;
+  cursor: pointer;
+}
+#home-container,.book-doctor,.appointment,.submit{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.book-doctor{
+  margin-top: 100px;
+}
+.sign{
+  display: flex;
+}
+.home-image {
+  height:500px;
+  width: 400px;
+}
+.bg-color4{
+  text-align: center;
+}
+.text-content{
+  text-align: left;
+  align-items: end;
+  width: 30%;
+}
+.col{
+  font-size: larger;
+  font-weight: bold;
+}
+.home-input{
+  width: 250px;
+  height:30px;
+  margin-bottom:20px;
+}
+.home-signup{
+  background-color: black;
+  border: none;
+  width: 100px;
+  height: 35px;
+  color: white;
+  cursor: pointer;
+}
+.aboutUs,.special-services,.best-doctors,.bg{
+  padding: 20px;
+  display: flex; 
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+.special-services{
+  margin-top: 50px;
+}
+.footer{
+  padding: 20px;
+  display: flex; 
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+.footer-section {
+  flex: 1 1 200px; 
+  margin: 50px 20px; 
+  min-width: 200px;
+}
+.image-aboutUs{
+  height: 100px;
+  width: 110px;
+  border-radius: 50%;
+}
+.image-aboutUs2{
+  height: 100px;
+  width: 110px;
+}
+.image-aboutUs2{
+  height: 100px;
+  width: 100px;
+}
+.footer-section ul {
+  list-style-type: none;
+  padding: 0; 
+}
+
+.footer-section ul li {
+  margin-bottom: 10px; 
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #181717;
+}
+#looking{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:80px;
+  margin-top: 20px;
+  gap: 10px;
+}
+.submit{
+  background-color:rgb(202, 192, 192);
+  display: flex;
+  align-items: center;
+}
+#sub-here{
+  margin-right: 50px;
+}
+.specialists {
+  display: flex;          
+  justify-content: center; 
+  align-items: center;          
+}
+.bg-color3{
+  text-align: center;  
+  width: 100%;
+}
+.bg-color3 img {
+  width: 100px;       
+  height: 100px;                
+}
+.bg-color1{
+  height: 100px;
+  width: 250px;
+}
+/*.bg-color{
+  background-color:rgb(202, 192, 192);
+  text-align: center;
+}
+.bg-color1{
+  background-color:rgb(202, 192, 192);
+}
+.bg-color2{
+  background-color:rgb(202, 192, 192);
+}*/
+#socials{
+  cursor: pointer;
+  filter: grayscale(100%);
+  align-items: center;
+  flex-wrap: wrap;
+  display:flex;
+}
+.logo-footer{
+  flex-wrap: wrap;
+  display:flex;
+}
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #1a1a1a;
+  padding: 10px;
+  color: white;
+  margin: 100px 200px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 0px;
+  border-right: 1px solid #333;
+  flex: 1;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-item h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.stat-item p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #bbb;
+}

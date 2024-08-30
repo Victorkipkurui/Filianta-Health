@@ -1,12 +1,22 @@
-function openLoginSignupPage() {
-  window.open("login.html", "_blank");
-}
-function handleLogin() {
-  openLoginSignupPage();
-}
-document.addEventListener("DOMContentLoaded", function() {
-  const loginButton = document.getElementById("js-button");
-  if (loginButton) {
-      loginButton.addEventListener("click", handleLogin);
-  }
+document.querySelector('.js-appointment').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let formData = new FormData(this);
+  let csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+  fetch('/bookings/book/', {
+      method: 'POST',
+      body: formData,
+      headers: {
+          'X-CSRFToken': csrfToken
+      }
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          // Handle success (e.g., show a success message, update the appointment list)
+      } else {
+          // Handle errors
+      }
+  });
 });
