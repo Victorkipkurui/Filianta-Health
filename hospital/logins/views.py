@@ -1,29 +1,33 @@
-from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import CustomUserCreationForm, CustomAuthenticationForm
+from .forms import UserRegisterForm
+from django.contrib.auth import logout
 
-def signup(request):
+
+def sign_up(request):
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, f'Your account has been created Successfully!')
             return redirect('login')
     else:
-        form = CustomUserCreationForm()
+        form = UserRegisterForm()
     return render(request, 'logins/signup.html', {'form': form})
 
-def login_view(request):
-    if request.method == 'POST':
-        form = CustomAuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('home')
-    else:
-        form = CustomAuthenticationForm()
-    return render(request, 'logins/login.html', {'form': form})
 
 @login_required
 def home(request):
     return render(request, 'logins/home.html')
+
+def base(request):
+    return render(request, 'logins/base.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('base')
+
+@login_required
+def profile(request):
+    return render(request, 'logins/profile.html')
