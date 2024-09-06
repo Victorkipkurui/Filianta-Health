@@ -1,10 +1,53 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+class Doctor(models.Model):
+    SPECIALIZATION_CHOICES = [
+        ('Cardiologist', 'Cardiologist'),
+        ('Dermatologist', 'Dermatologist'),
+        ('General Physician', 'General Physician'),
+        ('Pediatrician', 'Pediatrician'),
+    ]
+    name = models.CharField(max_length=100, null=True)
+    specialization = models.CharField(max_length=100, choices=SPECIALIZATION_CHOICES)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return f"Dr. {self.name} - {self.specialization}"
+
+class Patient(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    address = models.TextField()
+
+    def __str__(self):
+        return f"{self.user.first_name} {self.user.last_name}" if self.user else "Guest Patient"
+
+class Appointment(models.Model):
+    STATUS_CHOICES = [
+        ('Pending', 'Pending'),
+        ('Confirmed', 'Confirmed'),
+        ('Completed', 'Completed'),
+        ('Cancelled', 'Cancelled'),
+    ]
+
+    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True)
+    patient_name = models.CharField(max_length=100, null=True, blank=True)
+    patient_email = models.EmailField(null=True, blank=True)
+    patient_phone = models.CharField(max_length=15, null=True, blank=True)
+    appointment_date = models.CharField(max_length=15)
+    appointment_time = models.CharField(max_length=15)
+    reason = models.TextField()
+    status = models.CharField(max_length=50, choices=STATUS_CHOICES, default='Pending')
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"Appointment with Dr. {self.doctor.name} on {self.appointment_date} at {self.appointment_time}"
+
+    class Meta:
+        unique_together = ['doctor', 'appointment_date', 'appointment_time']
+

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book an Appointment</title>
+</head>
+<body>
+    <h1>Book a Hospital Appointment</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Book Appointment">
+    </form>
+</body>
+</html>
