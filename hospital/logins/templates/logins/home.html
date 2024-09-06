@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,7 +20,7 @@
               <li><a href="#services">Services</a></li>
               <li><a href="#doctors">Doctors</a></li>
               <li><a href="{% url 'appointment' %}">Book Appointment</a></li>
-              <li><a href="#about">Talk To Us</a></li>
+              <li><a href="{% url 'feedback' %}">Talk To Us</a></li>
             </ul>
           </nav>
         </div>
@@ -28,7 +29,35 @@
         </div>
       </div>
     </header>
-    <h1>Welcome to the Homepage</h1>
-    <p>You're logged in!</p>
+     {% if messages %}
+     <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+    <div id="doctors" class="best-doctors">
+      <div class="bg-color1">
+        <img src="{% static 'Images/doctor1.jpg' %}">
+        <h4>Dr. Hamilton John, PHD</h4>
+        <p> Diagnose and treat diseases and disorders of the heart and blood vessels, such as heart attacks, arrhythmias and hypertension.</p>
+      </div>
+      <div class="bg-color1">
+        <img src="{% static 'Images/doctor2.jpg' %}">
+        <h4>Dr. Kimutai Peter, PHD</h4>
+        <p>Uses imaging techniques, electroencephalograms (EEGs) and other diagnostic tools to assess neurological conditions and develop treatment plans.</p>
+      </div>
+      <div class="bg-color1">
+        <img src="{% static 'Images/doctor3.jpg' %}">
+        <h4>Dr. Sha Patel, PHD</h4>
+        <p>Specializes in the medical care of infants and adolescents, managing their growth, development and a health issues from minor illnesses to complex conditions.</p>
+      </div>
+      <div class="bg-color1">
+        <img src="{% static 'Images/ai-generated-8655320_1280.png' %}">
+        <h4>Dr. Kinuthia Kebaso, PHD</h4>
+        <p>Focus on diagnosing and treating injuries and diseases of the musculoskeletal system, including bones, joints, muscles, and ligaments.</p>
+      </div>
+    </div>
 </body>
 </html>

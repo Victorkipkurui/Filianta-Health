@@ -51,3 +51,15 @@ class Appointment(models.Model):
     class Meta:
         unique_together = ['doctor', 'appointment_date', 'appointment_time']
 
+
+class Feedback(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    name = models.CharField(max_length=100, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    feedback = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"Feedback from {self.name or self.user.username if self.user else 'Anonymous'} on {self.created_at.strftime('%Y-%m-%d')}"
+
+
