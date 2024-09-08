@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm
-from django.contrib.auth import logout
+from django.contrib.auth import logout,authenticate,login
 from .forms import AppointmentForm
 from .models import Patient
 from .forms import FeedbackForm
@@ -17,6 +17,20 @@ def sign_up(request):
     else:
         form = UserRegisterForm()
     return render(request, 'logins/signup.html', {'form': form})
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid username or password')
+
+    return render(request, 'logins/login.html')
 
 
 @login_required

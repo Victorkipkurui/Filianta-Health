@@ -37,12 +37,11 @@
     font-size: 24px;
 }
 .logo-image{
-  height: 20px;
-  width: 35px;
+  height: 50px;
+  width: 50px;
 }
 #analysis{
-  background-color: #345fec;
-  color: white;
+  background-color: #1e44ec;
   padding: 50px;
   margin: 50px;
   margin-bottom: 100px;
@@ -75,10 +74,10 @@
     border: none;
     background-color: white;
     color: rgb(1, 1, 95);
+    text-decoration: none;
 }
 .button:focus,.navbar:focus{
-  background-color:#1977cc;
-  color: white;
+  background-color:#1e44ec;
   padding:5px 10px;
 }
 body{
@@ -102,7 +101,9 @@ body{
   color: #000000;
   font-weight: bold;
 }
-
+.login{
+ display: flex;
+}
 .login hover{
   background-color: #000000;
   color: white;
@@ -144,7 +145,7 @@ body{
   margin-bottom: 50px;
 }
 .buttons{
-  background-color: #1977cc;
+  background-color: #1e44ec;
   color:white;
   padding:10px 30px;
   border: none;
@@ -173,10 +174,7 @@ body{
   padding: 10px;
   margin-bottom: 30px;
 }
-.outside-home{
-  background-color: #dcedfc;
-  width: 100%;
-}
+
 .text-content{
   text-align: left;
   align-items: end;

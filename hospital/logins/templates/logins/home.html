@@ -4,14 +4,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FigTree Hospital</title>
-    <link href="Images/icon.png" rel="icon">
-    <link href="Styles/index.css" rel="stylesheet">
+    <title>Filianta Hospital</title>
+    <link href="{% static 'logins/Images/icon.png' %}" rel="icon">
+    <link href="{% static 'logins/Styles/index.css' %}" rel="stylesheet">
   </head>
   <body>
     <header>
       <div class="header">
-        <div><img class="logo-image" src="Images/logo.png"></div>
+        <div><img class="logo-image" src="{% static 'logins/Images/logo.png' %}"></div>
         <div class="logo"><span style="font-weight: bold;" >Fig</span>Tree
         </div>
         <div class="navbar">
@@ -29,32 +29,24 @@
         </div>
       </div>
     </header>
-     {% if messages %}
-     <ul class="messages">
-        {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-
     <div id="doctors" class="best-doctors">
       <div class="bg-color1">
-        <img src="{% static 'Images/doctor1.jpg' %}">
+        <img src="{% static 'logins/Images/doctor1.jpg' %}">
         <h4>Dr. Hamilton John, PHD</h4>
         <p> Diagnose and treat diseases and disorders of the heart and blood vessels, such as heart attacks, arrhythmias and hypertension.</p>
       </div>
       <div class="bg-color1">
-        <img src="{% static 'Images/doctor2.jpg' %}">
+        <img src="{% static 'logins/Images/doctor2.jpg' %}">
         <h4>Dr. Kimutai Peter, PHD</h4>
         <p>Uses imaging techniques, electroencephalograms (EEGs) and other diagnostic tools to assess neurological conditions and develop treatment plans.</p>
       </div>
       <div class="bg-color1">
-        <img src="{% static 'Images/doctor3.jpg' %}">
+        <img src="{% static 'logins/Images/doctor3.jpg' %}">
         <h4>Dr. Sha Patel, PHD</h4>
         <p>Specializes in the medical care of infants and adolescents, managing their growth, development and a health issues from minor illnesses to complex conditions.</p>
       </div>
       <div class="bg-color1">
-        <img src="{% static 'Images/ai-generated-8655320_1280.png' %}">
+        <img src="{% static 'logins/Images/ai-generated-8655320_1280.png' %}">
         <h4>Dr. Kinuthia Kebaso, PHD</h4>
         <p>Focus on diagnosing and treating injuries and diseases of the musculoskeletal system, including bones, joints, muscles, and ligaments.</p>
       </div>

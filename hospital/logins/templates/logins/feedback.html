@@ -1,16 +1,91 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'logins/Styles/login.css' %}">
     <title>Submit Feedback</title>
 </head>
+<style>
+.feedback-container {
+    width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 100px;
+}
+.feedback-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+.feedback-container .form-group {
+    margin-bottom: 20px;
+}
+
+.feedback-container input[type="text"],
+.feedback-container input[type="email"],
+.feedback-container input[type="password"],
+.feedback-container select,
+.feedback-container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333;
+}
+.feedback-container button[type="submit"],
+.feedback-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e44ec; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.feedback-container button[type="submit"]:hover,
+.feedback-container input[type="submit"]:hover {
+    background-color: #1e44ec; 
+}
+.feedback-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 14px;
+}
+</style>
 <body>
-    <h1>Submit Your Feedback</h1>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-
-        <input type="submit" value="Submit Feedback">
-    </form>
+    <div class="feedback-container">
+        <h2>Submit Your Feedback</h2>
+        <div id="success-message" style="display:none; text-align:center; color: green; margin-bottom: 20px;">
+            Thank you for Your Feedback
+        </div>  
+        <form method="post" onsubmit="handleFormSubmit(event)">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const message = document.getElementById("success-message");
+            message.style.display = "block"; 
+            setTimeout(function() {
+                window.location.href = '/home'; 
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

@@ -4,15 +4,15 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FigTree Hospital</title>
-    <link href="/static/logins/images/icon.png" rel="icon">
+    <title>Filianta Hospital</title>
+    <link href="/static/logins/images/first-aid-kit.png" rel="icon">
     <link href="/static/logins/Styles/index.css" rel="stylesheet">
   </head>
   <body>
     <header>
       <div class="header">
-        <div><img class="logo-image" src="/static/logins/Images/logo.png" alt="Logo"></div>
-        <div class="logo"><span style="font-weight: bold;">Fig</span>Tree</div>
+        <div><img class="logo-image" src="/static/logins/Images/first-aid-kit.png" alt="Logo"></div>
+        <div class="logo"><span style="font-weight: bold;">Fili</span>anta</div>
         <div class="navbar">
           <nav>
             <ul class="navbar-links">
@@ -30,14 +30,17 @@
         </div>
         {% else %}
         <div class="login">
-          <a href="{% url 'signup' %}" class="button">Sign Up</a>
-          <a href="{% url 'login' %}" class="button">Log In</a>
+          <form action="/login">
+            <button class="button">Log In</button>
+          </form>
+          <form action="/signup">
+            <button class="button">Sign Up</button>
+          </form>
         </div> 
         {% endif %}
       </div>
     </header>
     <main>
-      <div class="outside-home">
         <div id="home-container">
           <div class="text-content">
             <div class="header-2"><h1>We prioritize your well-being</h1></div>
@@ -45,11 +48,15 @@
               <p>Our hospital is committed to your health, utilizing cutting-edge technology and expert care. We prioritize patient education and well-being, ensuring a comfortable, compassionate experience. Join our community dedicated to your health.</p>
             </div>
             <div class="sign">
-              <input type="text" class="home-input">
-              <button class="home-signup">Sign Up</button>
+              <input type="text" class="home-input" placeholder="Sign up with Email">
+              <form action="/signup">
+                <button class="button">Sign Up</button>
+              </form>
             </div>
             <div class="home-buttons">
-              <button class="buttons"> Book Now</button>
+              <form action="/book-appointment">
+                <button class="buttons"> Book Now</button>
+              </form>
               <button class="image-text-button">
                 <a href="https://www.youtube.com/watch?v=hhmnHWxDLYg">
                 <img src="/static/logins/Images/video-play-icon-15.gif" alt="Icon"  class="button-icon"></a>
@@ -61,7 +68,6 @@
             <img style="width: 600px;height: 450px;" class="home-image" src="/static/logins/Images/surgery-1822458_1280.jpg" alt="home">
           </div>
         </div>
-      </div>
       <div class="stats-container">
         <div class="stat-item">
             <h2>98%</h2>
@@ -208,7 +214,11 @@
         <div class="text-content">
           <h1><span style="color: gray;">Best Doctor</span> Anywhere And Anytime</h1>
           <p>Our hospital offers 24/7 emergency services that extend beyond the walls of our facility, providing critical care and medical assistance wherever you need it. Whether it's at the scene of an accident, at home, or on the road, our highly trained medical team is equipped with the latest technology and mobile units to deliver life-saving treatment on the spot. We ensure swift and effective response during emergencies, coordinating with local resources and using advanced telemedicine for remote diagnosis and guidance until you arrive safely at our hospital or receive the necessary care on-site. Your health and safety are our top priority, anytime and anywhere.</p>
-          <button class="buttons"> Find Doctor Now</button>
+          <div>
+            <form action="/doctors">
+              <button class="buttons"> Find Doctor Now</button>
+            </form>
+          </div> 
         </div>
         <div>
           <img style="width:600px; height: 400px;" class="home-image" src="/static/logins/Images/ambulance-2901017_1280.jpg">
@@ -221,7 +231,9 @@
         <div class="text-content">
           <h1><span style="color: gray;">Comprehensive</span> Online Care<span style="color: gray;"> Service 24/7</span> </h1>
           <p>Our hospital offers a comprehensive urgent online care service, providing patients with immediate access to medical professionals from the comfort of their homes. Whether you need consultation for sudden illnesses, minor injuries, or ongoing health concerns, our dedicated team of doctors and nurses is available 24/7 through our secure online platform. With quick virtual assessments, prescription services, and follow-up care, we ensure that you receive timely and effective medical attention without the need to visit the hospital in person. Your health and well-being are our priority, and we strive to deliver exceptional care whenever you need it.</p>
-          <button class="buttons js-appointment"> Take Appointment</button>
+          <form action="/book-appointment"></form>
+           <button class="buttons"> Take Appointment</button>
+          </form>
         </div>
       </div>
       <div id="about">
@@ -244,15 +256,17 @@
           <h1> <span style="color: rgb(104, 100, 100);">Want to</span> Talk<span style="color: rgb(104, 100, 100);"> To Us ?</span></h1>
         </div>
         <div>
-          <button class="buttons" id="sub-here"> Submit Here</button>
+          <form action="/feedback">
+            <button class="buttons" id="sub-here"> Submit Here</button>
+          </form>
         </div>
       </div>
     </main>
       <footer>
         <div class="footer">
           <div class="footer-section">
-            <div class="logo-footer"><img class="logo-image" src="/static/logins/Images/logo.png">
-            <span style="font-weight: bold;padding-bottom: 20px;" >Fig</span>Tree</div>
+            <div class="logo-footer"><img class="logo-image" src="/static/logins/Images/first-aid-kit.png">
+            <span style="font-weight: bold;padding-bottom: 20px;" >Fili</span>anta</div>
             <div style="width: 70%;">Our hospital is committed to your health, utilizing cutting-edge technology and expert care. We prioritize patient education and well-being, ensuring a comfortable, compassionate experience. Join our community dedicated to your health.</div>
             <div id="socials">
               <a href="https://twitter.com"><img style="width:30px; height: 30px"src="/static/logins/Images/twitter.png"></a>
@@ -300,6 +314,6 @@
           ©Designed by Victor Kipkurui. All Rights Reserved.
         </div>
       </footer>
-    <script src="{% static 'Scripts/index.js' %}"></script>
+    <script src="/static/logins/Scripts/index.js"></script>
   </body>
 </html>

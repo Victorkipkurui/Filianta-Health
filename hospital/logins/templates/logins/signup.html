@@ -1,21 +1,49 @@
+{% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'logins/Styles/signup.css' %}">
     <title>Signup</title>
 </head>
 <body>
-    <h1>Signup</h1>
+  <div class="signup-container">
+    <h2>Sign Up</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p}}
-        <button type="submit">Signup</button>
+        <div class="form-group">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+            {% for error in form.username.errors %}
+                <p class="errorlist">{{ error }}</p>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {% for error in form.email.errors %}
+                <p class="errorlist">{{ error }}</p>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+            {% for error in form.password1.errors %}
+                <p class="errorlist">{{ error }}</p>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+            {% for error in form.password2.errors %}
+                <p class="errorlist">{{ error }}</p>
+            {% endfor %}
+        </div>
+        <button type="submit">Sign Up</button>
     </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-          Already have an account <a class="ml-2" href="{% url 'login' %}">Log In</a>
-        </small>
-      </div>
+    <a href="{% url 'login' %}">Already have an account? Log in</a>
+</div>
 </body>
 </html>

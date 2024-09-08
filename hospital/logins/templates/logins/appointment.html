@@ -1,16 +1,85 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'logins/Styles/login.css' %}">
     <title>Book an Appointment</title>
+<style>
+.appointment-container {
+    width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 30px;
+}
+.appointment-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+.appointment-container .form-group {
+    margin-bottom: 10px;
+}
+.appointment-container input[type="text"],
+.appointment-container input[type="email"],
+.appointment-container input[type="password"],
+.appointment-container select,
+.appointment-container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+.appointment-container textarea {
+  height: 100px;
+}
+.appointment-container button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e44ec;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.appointment-container button[type="submit"]:hover {
+    background-color: #1e44ec; 
+}
+</style>
 </head>
 <body>
-    <h1>Book a Hospital Appointment</h1>
-
-    <form method="post">
+    <div class="appointment-container">
+    <h2>Book an Appointment</h2>  
+    <div id="success-message" style="display:none; text-align:center; color: green; margin-bottom: 20px;">
+        Your appointment has been successfully booked!
+    </div>   
+    <form method="post" onsubmit="handleFormSubmit(event)">
         {% csrf_token %}
-        {{ form.as_p }}
-
-        <input type="submit" value="Book Appointment">
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" >Book Appointment</button>
     </form>
+    </div>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const message = document.getElementById("success-message");
+            message.style.display = "block"; 
+            setTimeout(function() {
+                window.location.href = '/home'; 
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
