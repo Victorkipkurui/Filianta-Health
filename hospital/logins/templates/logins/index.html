@@ -7,6 +7,23 @@
     <title>Filianta Hospital</title>
     <link href="/static/logins/images/first-aid-kit.png" rel="icon">
     <link href="/static/logins/Styles/index.css" rel="stylesheet">
+    <style>
+      #button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+            color: #2c4964;
+            cursor: pointer;
+            text-align: center;
+          display:flex
+      }
+      #button:hover {
+          background-color: #0056b3;
+          color: white;
+      }
+  </style>
   </head>
   <body>
     <header>
@@ -29,12 +46,12 @@
           <a href="{% url 'logout' %}" class="button">Log Out</a>
         </div>
         {% else %}
-        <div class="login">
+        <div style="display: flex;">
           <form action="/login">
-            <button class="button">Log In</button>
+            <button id="button">Log In</button>
           </form>
           <form action="/signup">
-            <button class="button">Sign Up</button>
+            <button id="button">Sign Up</button>
           </form>
         </div> 
         {% endif %}
@@ -50,7 +67,7 @@
             <div class="sign">
               <input type="text" class="home-input" placeholder="Sign up with Email">
               <form action="/signup">
-                <button class="button">Sign Up</button>
+                <button style="      background-color: #007bff;; color: white; border-radius: 4px; padding: 9px 20px;" class="button">Sign Up</button>
               </form>
             </div>
             <div class="home-buttons">
@@ -302,10 +319,10 @@
             <nav class="footer-section">
               <h4> User</h4>
               <ul>
-                <li><a href="{% static '#home' %}">User Login</a></li>
-                <li><a href="{% static '#services' %}">User Register</a></li>
-                <li><a href="{% static '#doctors' %}">Forgot Password</a></li>
-                <li><a href="{% static '#facility' %}">Account Settings</a></li>
+                <li><a href="{% url 'login' %}">User Login</a></li>
+                <li><a href="{% url 'signup' %}">User Register</a></li>
+                <li><a href="/">Forgot Password</a></li>
+                <li><a href="/">Account Settings</a></li>
               </ul>
             </nav>
           </div>  

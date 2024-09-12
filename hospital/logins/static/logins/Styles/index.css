@@ -76,7 +76,7 @@
     color: rgb(1, 1, 95);
     text-decoration: none;
 }
-.button:focus,.navbar:focus{
+.button:hover{
   background-color:#1e44ec;
   padding:5px 10px;
 }
@@ -145,7 +145,7 @@ body{
   margin-bottom: 50px;
 }
 .buttons{
-  background-color: #1e44ec;
+  background-color: #0056b3;
   color:white;
   padding:10px 30px;
   border: none;
